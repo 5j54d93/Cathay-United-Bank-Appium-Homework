@@ -43,7 +43,7 @@ print("There are " + str(len(bullets)) + " credit cards that stop contribute.")
 for idx, bullet in enumerate(bullets): # 依序點擊停發卡選單點點
     creditCard = driver.create_web_element(bullet["ELEMENT"])
     creditCard.click()
-    if idx == 0: # 如果是選單點點，再點擊上方選單中的「停發卡」，正確定位
+    if idx == 0: # 如果是第一個選單點點，再點擊上方選單中的「停發卡」，正確定位
         waitAndClick(driver, By.XPATH, '/html/body/div[1]/main/article/div/div/div/div[1]/div/div/a[6]')
     wait.until(EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/main/article/section[6]/div/div[2]/div/div[1]/div[" + str(idx + 1) + "]")))
     screenshot(driver, 'credit card - ' + str(idx + 1) + '.png')
