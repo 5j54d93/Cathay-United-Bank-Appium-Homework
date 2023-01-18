@@ -25,32 +25,31 @@ wait = WebDriverWait(driver, 60)
 wait.until(EC.presence_of_element_located((By.CLASS_NAME, 'cubre-o-quickLink')))
 screenshot(driver, 'home page.png')
 
-waitAndClick(driver, By.CLASS_NAME, 'cubre-o-header__burger')
-waitAndClick(driver, By.XPATH, '/html/body/div[1]/header/div/div[3]/div/div[2]/div/div/div[1]')
-waitAndClick(driver, By.XPATH, '/html/body/div[1]/header/div/div[3]/div/div[2]/div/div/div[1]/div[2]/div/div[1]')
+waitAndClick(driver, By.CLASS_NAME, 'cubre-o-header__burger') # 左上角漢堡選單
+waitAndClick(driver, By.XPATH, '/html/body/div[1]/header/div/div[3]/div/div[2]/div/div/div[1]') # 產品介紹
+waitAndClick(driver, By.XPATH, '/html/body/div[1]/header/div/div[3]/div/div[2]/div/div/div[1]/div[2]/div/div[1]') # 信用卡
 wait.until(EC.presence_of_element_located((By.CLASS_NAME, "cubre-o-menuLinkList__content")))
 screenshot(driver, 'credit card list.png')
 
 creditCardList = driver.create_web_element(driver.find_element(By.XPATH, "/html/body/div[1]/header/div/div[3]/div/div[2]/div/div/div[1]/div[2]/div/div[1]/div[2]")["ELEMENT"])
 print("-----")
 print("There are " + str(len(creditCardList.find_elements(By.XPATH, './/a[@class="cubre-a-menuLink"][@id="lnk_Link"]'))) + " rows in credit card menu.")
-waitAndClick(driver, By.XPATH, '//*[@id="lnk_Link"]')
-waitAndClick(driver, By.XPATH, '/html/body/div[1]/main/article/div/div/div/div[1]/div/div/a[3]')
-waitAndClick(driver, By.XPATH, '/html/body/div[1]/main/article/div/div/div/div[1]/div/div/a[5]')
-waitAndClick(driver, By.XPATH, '/html/body/div[1]/main/article/div/div/div/div[1]/div/div/a[6]')
-bulletsArea = driver.create_web_element(driver.find_element(By.XPATH, "/html/body/div[1]/main/article/section[6]/div/div[2]/div/div[2]")["ELEMENT"])
-bullets = bulletsArea.find_elements(By.XPATH, './/span[@role="button"]')
+waitAndClick(driver, By.XPATH, '//*[@id="lnk_Link"]') # 卡片介紹
+bulletsArea = driver.create_web_element(driver.find_element(By.XPATH, "/html/body/div[1]/main/article/section[6]/div/div[2]/div/div[2]")["ELEMENT"])  # 停發卡選單點點區域
+bullets = bulletsArea.find_elements(By.XPATH, './/span[@role="button"]') # 停發卡選單點點
 print("-----")
 print("There are " + str(len(bullets)) + " credit cards that stop contribute.")
 
-for idx, bullet in enumerate(bullets):
+for idx, bullet in enumerate(bullets): # 依序點擊停發卡選單點點
     creditCard = driver.create_web_element(bullet["ELEMENT"])
     creditCard.click()
+    if idx == 0: # 如果是選單點點，再點擊上方選單中的「停發卡」，正確定位
+        waitAndClick(driver, By.XPATH, '/html/body/div[1]/main/article/div/div/div/div[1]/div/div/a[6]')
     wait.until(EC.presence_of_element_located((By.XPATH, "/html/body/div[1]/main/article/section[6]/div/div[2]/div/div[1]/div[" + str(idx + 1) + "]")))
     screenshot(driver, 'credit card - ' + str(idx + 1) + '.png')
 
 numOfCreditCardImg = 0
-for path in os.listdir(os.getcwd()):
+for path in os.listdir(os.getcwd()): # 數截圖了幾張信用卡
     if os.path.isfile(os.path.join(os.getcwd(), path)) and path.startswith("credit card - "):
         numOfCreditCardImg += 1
 
