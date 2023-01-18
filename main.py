@@ -40,7 +40,7 @@ bullets = bulletsArea.find_elements(By.XPATH, './/span[@role="button"]') # 停�
 print("-----")
 print("There are " + str(len(bullets)) + " credit cards that stop contribute.")
 
-for idx, bullet in enumerate(bullets): # 依序點擊停發卡選單點點
+for idx, bullet in enumerate(bullets): # 依序點擊停發卡選單點點並截圖
     creditCard = driver.create_web_element(bullet["ELEMENT"])
     creditCard.click()
     if idx == 0: # 如果是第一個選單點點，再點擊上方選單中的「停發卡」，正確定位
