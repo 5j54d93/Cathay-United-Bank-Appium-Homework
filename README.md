@@ -1,5 +1,6 @@
 # Cathay United Bank Appium Homework
 
+`adb logcat | grep START`
 `adb shell dumpsys activity | grep mCurrentFocus`
 
 ## Flow Diagram
