@@ -19,7 +19,7 @@ adb tcpip 5555
 
 If it run for a long time and no result, use `killall adb` command and try again.
 
-## Flow Diagram
+## Flow Chart
 
 <img src="https://github.com/5j54d93/Cathay-United-Bank-Appium-Homework/blob/main/.github/assets/Flow%20Chart.png" width='100%' height='100%'/>
 
