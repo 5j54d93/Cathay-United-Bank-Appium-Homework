@@ -6,6 +6,10 @@
 
 Uing [**Appium**](https://appium.io) to remote control Android mobile phone（Pixel 3a）to test some credit card views are appear correctly on [**Cathay United Bank**](https://www.cathaybk.com.tw/cathaybk/) website with [**Chrome**](https://www.google.com/chrome/).
 
+## Preparation
+
+1. Let Android phone and computer connect to the same Wi-Fi
+
 ## Flow Diagram
 
 <img src="https://github.com/5j54d93/Cathay-United-Bank-Appium-Homework/blob/main/.github/assets/Flow%20Chart.png" width='100%' height='100%'/>
