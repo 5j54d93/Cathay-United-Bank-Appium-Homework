@@ -4,7 +4,7 @@
 [![GitHub stars](https://img.shields.io/github/stars/5j54d93/Cathay-United-Bank-Appium-Homework)](https://github.com/5j54d93/Cathay-United-Bank-Appium-Homework/stargazers)
 ![GitHub repo size](https://img.shields.io/github/repo-size/5j54d93/Cathay-United-Bank-Appium-Homework)
 
-Uing [**Appium**](https://appium.io) to remote control Android mobile phone（Pixel 3a）to test some credit card views are appear correctly on [**Cathay United Bank**](https://www.cathaybk.com.tw/cathaybk/) website.
+Uing [**Appium**](https://appium.io) to remote control Android mobile phone（Pixel 3a）to test some credit card views are appear correctly on [**Cathay United Bank**](https://www.cathaybk.com.tw/cathaybk/) website with [**Chrome**](https://www.google.com/chrome/).
 
 ## Flow Diagram
 
