@@ -6,7 +6,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
 def screenshot(driver, fileName):
-    driver.save_screenshot(os.getcwd() + '/' + fileName)
+    driver.save_screenshot(os.getcwd() + '/screenshots/' + fileName)
 
 def waitAndClick(driver, By, string):
     wait.until(EC.presence_of_element_located((By, string)))
@@ -15,13 +15,13 @@ def waitAndClick(driver, By, string):
 desiredCapabilities = {
     'platformName': 'Android',
     'platformVersion': '12',
-    'deviceName': '172.25.137.138:5555',
+    'deviceName': '172.25.136.127:5555',
     'automationName': 'UiAutomator2',
     'browserName': 'Chrome',
     'noReset': True,
     'newCommandTimeout': 60
 }
-driver = webdriver.Remote('http://localhost:4725/wd/hub', desiredCapabilities)
+driver = webdriver.Remote('http://localhost:4723/wd/hub', desiredCapabilities)
 driver.get('https://www.cathaybk.com.tw/cathaybk/')
 wait = WebDriverWait(driver, 60)
 
