@@ -8,7 +8,7 @@ Uing [**Appium**](https://appium.io) to remote control Android mobile phone（Pi
 
 ## Flow Diagram
 
-<img src="https://github.com/5j54d93/Cathay-United-Bank-Appium-Homework/blob/main/.github/assets/Flow%20Diagram.png" width='100%' height='100%'/>
+<img src="https://github.com/5j54d93/Cathay-United-Bank-Appium-Homework/blob/main/.github/assets/Flow%20Chart.png" width='100%' height='100%'/>
 
 ## Learn More
 
